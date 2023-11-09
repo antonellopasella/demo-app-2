@@ -10,5 +10,5 @@ export default interface Drink {
     lang: string,
     text: string
   }[]
-  tags?: string[]
+  tags: string[]
 }

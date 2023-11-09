@@ -1,6 +1,29 @@
 DETTAGLIO.....
-<h1>Nome drink {{drink.strDrink}}</h1>
+<h1>Nome drink {{ drinkTitle }}</h1>
 <img [src]="drink.strDrinkThumb" width="30" alt="immagine del drink">
+<form>
+  <div>
+    <label>Nome:</label>
+    <input [(ngModel)]="drink.strDrink" name="strDrink" required maxlength="50" />
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let tag of drink.tags; let i = index;">
+        <input [(ngModel)]="drink.tags[i]" [name]="'tag' + i" />
+        <button (click)="eliminaTag(i)">Elimina</button>
+      </li>
+      <li>
+        <input [(ngModel)]="newTag" name="newTag"/>
+        <button (click)="inserisciTag()">inserisci</button>
+      </li>
+    </ul>
+  </div>
+
+  <pre>{{ drink | json }}</pre>
+
+
+  <button (click)="salva()">SALVA</button>
+</form>
 <!--
   FORM per consentire la modifica dei seguenti campi:
   - strDrink (modifica)
