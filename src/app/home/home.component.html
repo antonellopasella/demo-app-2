@@ -1,0 +1,15 @@
+HOME
+<ul>
+  <li *ngFor="let lettera of lettere"
+      [routerLink]="['/home/' + lettera]">
+    {{ lettera }}
+  </li>
+</ul>
+<table>
+  <tr *ngFor="let drink of drinks">
+    <td>{{drink.strDrink}}</td>
+    <td>
+        <button [routerLink]="['/dettaglio/' + drink.idDrink]">dettaglio</button>
+    </td>
+  </tr>
+</table>
