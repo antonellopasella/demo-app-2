@@ -13,3 +13,9 @@ HOME
     </td>
   </tr>
 </table>
+
+<section>
+  <drink-card *ngFor="let drinkConsgliato of drinkConsigliati"
+        [drink]="drinkConsgliato"
+  ></drink-card>
+</section>

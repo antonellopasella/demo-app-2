@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Drink from '../_models/drink.model';
 import ApiService from '../_services/api.service';
 
@@ -13,7 +13,8 @@ export class DettaglioComponent {
   drinkTitle = '';
   newTag = '';
 
-  constructor(private route: ActivatedRoute, private apiService: ApiService) {}
+  constructor(private route: ActivatedRoute, private apiService: ApiService,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.route.data.subscribe(
@@ -34,7 +35,14 @@ export class DettaglioComponent {
 
   salva() {
     const drink = JSON.parse(JSON.stringify(this.drink));
-    this.apiService.saveDrink(drink);
+    this.apiService.saveDrink(drink)
+          .subscribe( response => {
+            this.router.navigateByUrl('/home/A');
+            // this.apiService.lookupByI(this.drink.idDrink).subscribe( drink => {
+            //   this.drink = drink;
+            //   this.drinkTitle = drink.strDrink;
+            // })
+          })
 
   }
 }

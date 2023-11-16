@@ -2,8 +2,6 @@ import { NgModule, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, Route, RouterModule, RouterStateSnapshot } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
-import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
 import ApiService from './_services/api.service';
 
 const routes: Route[] =  [
@@ -29,7 +27,9 @@ const routes: Route[] =  [
 ]
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+  }) ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

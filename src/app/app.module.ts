@@ -11,12 +11,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import ApiService from './_services/api.service';
+import { DrinkCardComponent } from './drink-card/drink-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DettaglioComponent,
+    DrinkCardComponent,
   ],
   imports: [
     BrowserModule,

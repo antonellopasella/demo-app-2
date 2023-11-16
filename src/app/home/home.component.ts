@@ -10,6 +10,7 @@ import Drink from '../_models/drink.model';
 })
 export class HomeComponent implements OnInit {
   drinks: Drink[] = [];
+  drinkConsigliati = [{num:1},{num:2},{num:3}];
   lettere = ['A','B','C','D','E'];
 
   constructor(private apiService: ApiService, private route: ActivatedRoute) { }
