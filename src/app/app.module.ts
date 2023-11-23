@@ -22,7 +22,9 @@ import { DrinksModule } from './drinks/drinks.module';
     BlockUIModule.forRoot(),
     BlockUIHttpModule.forRoot(),
     AppRoutingModule,
-    DrinksModule,
+    // DrinksModule, // feature module
+                  // shared module (un modulo che importa/esporta tutti i moduli "comuni")
+                  // core module (un modulo dove metto i service e che importa/esporta i moduli che metterei in app.module.ts)
   ],
   providers: [
     ApiService,
