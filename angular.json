@@ -36,6 +36,7 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "dist/app-prod",
               "budgets": [
                 {
                   "type": "initial",
@@ -51,6 +52,7 @@
               "outputHashing": "all"
             },
             "development": {
+              "outputPath": "dist/app-dev",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
