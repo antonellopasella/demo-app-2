@@ -8,17 +8,12 @@ import { BlockUIHttpModule } from 'ng-block-ui/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { DettaglioComponent } from './dettaglio/dettaglio.component';
 import ApiService from './_services/api.service';
-import { DrinkCardComponent } from './drink-card/drink-card.component';
+import { DrinksModule } from './drinks/drinks.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DettaglioComponent,
-    DrinkCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +22,7 @@ import { DrinkCardComponent } from './drink-card/drink-card.component';
     BlockUIModule.forRoot(),
     BlockUIHttpModule.forRoot(),
     AppRoutingModule,
+    DrinksModule,
   ],
   providers: [
     ApiService,

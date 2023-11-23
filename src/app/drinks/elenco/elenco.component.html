@@ -9,7 +9,7 @@ HOME
   <tr *ngFor="let drink of drinks">
     <td>{{drink.strDrink}}</td>
     <td>
-        <button [routerLink]="['/dettaglio/' + drink.idDrink]">dettaglio</button>
+        <button [routerLink]="['/drinks/dettaglio/' + drink.idDrink]">dettaglio</button>
     </td>
   </tr>
 </table>

@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import Drink from '../_models/drink.model';
-import ApiService from '../_services/api.service';
+import Drink from '../../_models/drink.model';
+import ApiService from '../../_services/api.service';
 
 @Component({
   selector: 'app-dettaglio',

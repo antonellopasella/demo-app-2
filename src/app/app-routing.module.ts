@@ -1,28 +1,13 @@
-import { NgModule, inject } from '@angular/core';
-import { ActivatedRouteSnapshot, Route, RouterModule, RouterStateSnapshot } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { DettaglioComponent } from './dettaglio/dettaglio.component';
-import ApiService from './_services/api.service';
+import { NgModule } from '@angular/core';
+import { Route, RouterModule } from '@angular/router';
 
 const routes: Route[] =  [
-//  {path: 'crisis-list', component: CrisisListComponent},
-  // {path: 'home', redirectTo: '/home/A'},
   {
-    path: 'home/:lettera',
-    component: HomeComponent,
-    resolve: {
-      'searchResponse': (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) =>
-                  inject(ApiService).searchByF(route.paramMap.get('lettera')!)
-    }
-  },{
-    path: 'dettaglio/:idDrink',
-    component: DettaglioComponent,
-    resolve: {
-                'drink': (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) =>
-                            inject(ApiService).lookupByI(route.paramMap.get('idDrink')!)
-        }
+    path: 'drinks',
+    loadChildren: () => import('./drinks/drinks.module')
+                            .then(m => m.DrinksModule)
   },
-  {path: '', pathMatch: 'full', redirectTo: '/home/A'},
+  {path: '', pathMatch: 'full', redirectTo: '/drinks/elenco'},
 //  {path: '**', redirectTo: '/home'}
 ]
 
