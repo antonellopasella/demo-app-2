@@ -10,6 +10,7 @@ import Drink from 'src/app/_models/drink.model';
 export class DrinkCardComponent {
   @Input() drink!:Drink;
   @Output() onDelete: EventEmitter<Drink> = new EventEmitter();
+  @Output() pippo: EventEmitter<'OPEN' | 'CLOSED'> = new EventEmitter();
 
   constructor() {}
 
