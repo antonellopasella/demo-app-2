@@ -16,6 +16,10 @@ const routes: Route[] =  [
   {
     path: 'elenco',
     component: ElencoComponent,
+    resolve: {
+      'searchResponse': (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) =>
+                  inject(ApiService).searchByF('A')
+}
   },
 ]
 

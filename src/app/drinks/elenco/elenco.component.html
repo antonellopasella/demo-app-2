@@ -17,5 +17,6 @@ HOME
 <section>
   <drink-card *ngFor="let drinkConsgliato of drinkConsigliati"
         [drink]="drinkConsgliato"
-  ></drink-card>
+        (onDelete)="cancellaDrink($event)">
+    </drink-card>
 </section>
